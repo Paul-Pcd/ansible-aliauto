@@ -1,0 +1,25 @@
+#- name: test
+#  my_module:
+#    name: "Hello-World"
+#    register: result
+
+- name: test
+  aliapi_module:
+    AccessKeyID: "{{AccessKeyID}}"
+    AccessKeySecret: "{{AccessKeySecret}}"
+    Version: "{{Version}}"
+    Format: "{{Format}}"
+    SignatureVersion: "{{SignatureVersion}}"
+    ResourceOwnerAccount: "{{ResourceOwnerAccount}}"
+    Action: "{{Action}}"
+    RegionId: "{{RegionId}}"
+    ServerCertificate: "{{ServerCertificate}}"
+    ServerCertificateName: "{{ServerCertificateName}}"
+    PrivateKey: "{{PrivateKey}}"
+  register: result
+
+- debug: var=result.meta.url
+
+- uri:
+    url: "{{result.meta.url}}"
+  register: response

@@ -1,0 +1,20 @@
+---
+  AccessKeyID: "xxx"
+  AccessKeySecret: "xxx"
+  Baseurl: "https://slb.aliyuncs.com/?"
+  Version: "2014-05-15"
+  Format: "JSON"
+  SignatureVersion: "1.0"
+  ResourceOwnerAccount: "xxx@mail.com"
+  Action: "UploadServerCertificate"
+  RegionId: "cn-beijing"
+  ServerCertificateName: "test-ansible"
+  ServerCertificate: |
+                      -----BEGIN CERTIFICATE-----
+                      xxxx
+                      -----END CERTIFICATE-----
+
+  PrivateKey: |
+              -----BEGIN RSA PRIVATE KEY-----
+              xxx
+              -----END RSA PRIVATE KEY-----
